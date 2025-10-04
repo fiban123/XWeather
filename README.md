@@ -37,11 +37,13 @@ lightning strike
 // continuous data entries
 
 {number of continuous data entries as uint64}
+{number of continuous data entry types as uint64}
 {temperatrue as float at t+0}{temperature as float at t+1}...{temperature as flaot at t+86400} // number of seconds per day = 86400
 // size of single continuous data entry: 2.7648 Mbit / day = 345.600 KB / day
 ... 
 
 // event-based data entries
+{number of event-based entry types as uint64}
 {number of event-based entries as uint64}
 
 {x as uint64}

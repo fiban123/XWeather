@@ -3,6 +3,10 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <system_error>
+#include <source_location>
+
+#define HERE std::source_location::current()
 
 enum StatusType{
     FAIL,
@@ -21,3 +25,10 @@ struct [[nodiscard]] Status{
 
     bool fail();
 };
+
+std::string err_code_info(std::error_code ec);
+
+std::string code_position(const std::source_location& loc = std::source_location::current());
+
+Status gen_err(std::string msg, Status s, const std::source_location& loc = std::source_location::current());
+Status gen_root_err(std::string msg, const std::source_location& loc = std::source_location::current());

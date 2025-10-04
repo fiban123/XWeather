@@ -6,6 +6,7 @@
 #include <ctime>
 #include <vector>
 
-typedef std::array<double, N_CONTINUOUS_ENTRIES> ContinuousEntry;
+typedef double ContinuousEntryType;
+typedef std::vector<ContinuousEntryType> ContinuousEntry;
 
 typedef UnixMillis EventBasedEntry;

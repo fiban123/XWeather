@@ -7,17 +7,19 @@
 
 #include <vector>
 
-class DataEntryCache{
+class EntryCache{
     public:
     
-    UnixMillis first_entry_timestamp;
+    Timestamp first_entry_timestamp;
 
-    size_t i;
+    size_t n_event_based_entries = N_EVENT_BASED_ENTRY_TYPES;
 
-    std::array<ContinuousEntry, DATA_CACHE_SIZE> continuous_entry_cache;
-    std::array<std::vector<EventBasedEntry>, N_EVENT_BASED_ENTRIES> event_based_entry_cache;
+    size_t n_entry_types = N_CONTINUOUS_ENTRY_TYPES;
 
-    DataEntryCache();
+    std::vector<ContinuousEntryType> continuous_entry_cache;
+    std::vector<std::vector<EventBasedEntry> > event_based_entry_cache;
+
+    EntryCache();
 
     void push_continuous(ContinuousEntry entry);
     void push_event_based(UnixMillis timestamp, size_t type);

@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cppStandard": "c++26",
+            "intelliSenseMode": "linux-gcc-arm64",
+            //"compilerArgs": ["-fno-delayed-template-parsing"]
+        }
+    ],
+    "version": 4
+}
